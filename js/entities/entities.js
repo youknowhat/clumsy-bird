@@ -163,9 +163,9 @@ game.PipeGenerator = me.Renderable.extend({
         if (this.generate++ % this.pipeFrequency == 0) {
             var posY = Number.prototype.random(
                     me.video.renderer.getHeight() - 100,
-                    200
+                    150
             );
-            var posY2 = posY - me.game.viewport.height - this.pipeHoleSize;
+            var posY2 = posY - me.game.viewport.height - this.pipeHoleSize - 50;
             var pipe1 = new me.pool.pull('pipe', this.posX, posY);
             var pipe2 = new me.pool.pull('pipe', this.posX, posY2);
             var hitPos = posY - 100;
