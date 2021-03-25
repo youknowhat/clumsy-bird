@@ -21,7 +21,8 @@
     "email": "youknowhat@gmail.com"
   },
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.8.0",
+    "npm": "6.11.3"
   },
   "scripts": {
     "start": "grunt connect"
