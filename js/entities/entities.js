@@ -31,7 +31,7 @@ game.BirdEntity = me.Entity.extend({
         // collision shape
         this.collided = false;
 
-        this.gravityForce = 0.2;
+        this.gravityForce = 0.8;
     },
 
     update: function(dt) {
@@ -43,14 +43,14 @@ game.BirdEntity = me.Entity.extend({
         this.renderable.currentTransform.identity();
         if (me.input.isKeyPressed('fly')) {
             me.audio.play('wing');
-            this.gravityForce = 0.2;
+            this.gravityForce = 0.8;
             var currentPos = this.pos.y;
 
             this.angleTween.stop();
             this.flyTween.stop();
 
 
-            this.flyTween.to({y: currentPos - 72}, 50);
+            this.flyTween.to({y: currentPos - 40}, 50);
             this.flyTween.start();
 
             this.angleTween.to({currentAngle: that.maxAngleRotation}, 50).onComplete(function(angle) {
@@ -163,9 +163,9 @@ game.PipeGenerator = me.Renderable.extend({
         if (this.generate++ % this.pipeFrequency == 0) {
             var posY = Number.prototype.random(
                     me.video.renderer.getHeight() - 100,
-                    150
+                    180
             );
-            var posY2 = posY - me.game.viewport.height - this.pipeHoleSize - 50;
+            var posY2 = posY - me.game.viewport.height - this.pipeHoleSize - 20;
             var pipe1 = new me.pool.pull('pipe', this.posX, posY);
             var pipe2 = new me.pool.pull('pipe', this.posX, posY2);
             var hitPos = posY - 100;
